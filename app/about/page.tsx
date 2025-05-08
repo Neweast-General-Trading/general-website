@@ -294,29 +294,29 @@ export default function AboutPage() {
                   link: "https://www.linkedin.com/in/ahmed-juma-al-ahli/",
                 },
                 {
-                  name: "Sarah Johnson",
-                  position: "Chief Operations Officer",
+                  name: "SAEED JUMA AHLI",
+                  position: "VICE PRESIDENT",
                   image:
                     "https://nesteastgt.s3.eu-west-2.amazonaws.com/paperless/c3b128934ac_2.jpg",
                   link: "/about",
                 },
                 {
-                  name: "Michael Brown",
-                  position: "Head of Product",
+                  name: "HAMAD JUMA AHLI",
+                  position: "GENERAL MANAGER",
                   image:
                     "https://nesteastgt.s3.eu-west-2.amazonaws.com/paperless/25c3b128934_3.jpg",
                   link: "/about",
                 },
                 {
-                  name: "Emily Davis",
-                  position: "Customer Service Director",
+                  name: "Henry Shaaya",
+                  position: "MANAGING DIRECTOR",
                   image:
                     "https://nesteastgt.s3.eu-west-2.amazonaws.com/paperless/b128934ac15_4.jpg",
                   link: "https://www.linkedin.com/in/henryshaaya/?originalSubdomain=ae",
                 },
                 {
-                  name: "Emily Davis",
-                  position: "Customer Service Director",
+                  name: "Nantha Kumar",
+                  position: "HEAD OF EUROPEAN DIVISION CEO OMAN",
                   image:
                     "https://nesteastgt.s3.eu-west-2.amazonaws.com/paperless/5c3b128934a_5.jpg",
                   link: "https://www.linkedin.com/in/nantha-kumar-2a310847/?originalSubdomain=ae",

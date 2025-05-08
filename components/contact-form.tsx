@@ -173,12 +173,12 @@ export default function ContactForm() {
             </p>
           )}
         </div>
-        <ReCAPTCHA
+        {/* <ReCAPTCHA
           sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
           ref={recaptchaRef}
           onChange={handleChange}
           onExpired={handleExpired}
-        />
+        /> */}
         <Button
           type="submit"
           className="w-full bg-red-600 hover:bg-red-700 rounded-sm"
