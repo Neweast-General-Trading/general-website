@@ -24,7 +24,8 @@ export const metadata = {
     title: "NewEast | Contact Us",
     type: "website",
     url: process.env.NEXT_PUBLIC_URL + "/contact",
-    image: "/assets/images/ne.png",
+    image:
+      "https://nesteastgt.s3.eu-west-2.amazonaws.com/paperless/1b159ec4b93_ne.png",
     description:
       "Get in touch with NewEast for inquiries about top-quality auto parts including engine & fuel parts, batteries, brakes, steering, and lubricants. We're here to help.",
   },
@@ -32,7 +33,8 @@ export const metadata = {
     title: "NewEast | Contact Us",
     type: "website",
     url: process.env.NEXT_PUBLIC_URL + "/contact",
-    image: "/assets/images/ne.png",
+    image:
+      "https://nesteastgt.s3.eu-west-2.amazonaws.com/paperless/1b159ec4b93_ne.png",
     description:
       "Get in touch with NewEast for inquiries about top-quality auto parts including engine & fuel parts, batteries, brakes, steering, and lubricants. We're here to help.",
   },

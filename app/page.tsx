@@ -26,7 +26,8 @@ export const metadata = {
     title: "NewEast | Home Page",
     type: "website",
     url: process.env.NEXT_PUBLIC_URL,
-    image: "/assets/images/ne.png",
+    image:
+      "https://nesteastgt.s3.eu-west-2.amazonaws.com/paperless/1b159ec4b93_ne.png",
     description:
       "Buy top-quality auto parts online including engine & fuel parts, batteries, brakes, steering, and lubricants. Trusted brands. Fast delivery across the GULF.",
   },
@@ -34,7 +35,8 @@ export const metadata = {
     title: "NewEast | Home Page",
     type: "website",
     url: process.env.NEXT_PUBLIC_URL,
-    image: "/assets/images/ne.png",
+    image:
+      "https://nesteastgt.s3.eu-west-2.amazonaws.com/paperless/1b159ec4b93_ne.png",
     description:
       "Buy top-quality auto parts online including engine & fuel parts, batteries, brakes, steering, and lubricants. Trusted brands. Fast delivery across the GULF.",
   },
@@ -58,27 +60,27 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
               <CategoryCard
                 title="Engine & Fuel Parts"
-                image="/assets/images/categories/1.jpg"
+                image="https://nesteastgt.s3.eu-west-2.amazonaws.com/paperless/c4a51b159ec_1.jpg"
               />
               <CategoryCard
                 title="Suspension & Power Steering"
-                image="/assets/images/categories/2.jpg"
+                image="https://nesteastgt.s3.eu-west-2.amazonaws.com/paperless/4a51b159ec4_2.jpg"
               />
               <CategoryCard
                 title="Battery"
-                image="/assets/images/categories/3.jpg"
+                image="https://nesteastgt.s3.eu-west-2.amazonaws.com/paperless/fc4a51b159e_3.jpg"
               />
               <CategoryCard
                 title="Lubricant and Additives"
-                image="/assets/images/categories/4.jpg"
+                image="https://nesteastgt.s3.eu-west-2.amazonaws.com/paperless/51b159ec4b9_4.jpg "
               />
               <CategoryCard
                 title="Bearing"
-                image="/assets/images/categories/5.jpg"
+                image="https://nesteastgt.s3.eu-west-2.amazonaws.com/paperless/a51b159ec4b_5.jpg"
               />
               <CategoryCard
                 title="Brake Parts"
-                image="/assets/images/categories/6.jpg"
+                image="https://nesteastgt.s3.eu-west-2.amazonaws.com/paperless/efc4a51b159_6.jpg"
               />
             </div>
           </div>

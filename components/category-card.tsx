@@ -1,9 +1,9 @@
-import Image from "next/image"
-import Link from "next/link"
+import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 
 interface CategoryCardProps {
-  title: string
-  image: string
+  title: string;
+  image: string | StaticImageData;
 }
 
 export default function CategoryCard({ title, image }: CategoryCardProps) {
@@ -19,5 +19,5 @@ export default function CategoryCard({ title, image }: CategoryCardProps) {
       </div>
       <h3 className="text-center font-medium">{title}</h3>
     </Link>
-  )
+  );
 }

@@ -9,7 +9,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <Image
-              src={"/assets/images/white-logo.png"}
+              src={
+                "https://nesteastgt.s3.eu-west-2.amazonaws.com/paperless/b159ec4b930_white-logo.png"
+              }
               width={200}
               height={100}
               alt={"New East Logo"}

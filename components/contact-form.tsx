@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -17,11 +17,39 @@ const formSchema = z.object({
 });
 
 type FormData = z.infer<typeof formSchema>;
-
+import ReCAPTCHA from "react-google-recaptcha";
+import type { NextPage } from "next";
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const [isVerified, setIsVerified] = useState(false);
 
+  async function handleCaptchaSubmission(token: string | null) {
+    try {
+      if (token) {
+        await fetch("/api", {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ token }),
+        });
+        setIsVerified(true);
+      }
+    } catch (e) {
+      setIsVerified(false);
+    }
+  }
+
+  const handleChange = (token: string | null) => {
+    handleCaptchaSubmission(token);
+  };
+
+  function handleExpired() {
+    setIsVerified(false);
+  }
   const {
     register,
     handleSubmit,
@@ -145,6 +173,12 @@ export default function ContactForm() {
             </p>
           )}
         </div>
+        <ReCAPTCHA
+          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
+          ref={recaptchaRef}
+          onChange={handleChange}
+          onExpired={handleExpired}
+        />
         <Button
           type="submit"
           className="w-full bg-red-600 hover:bg-red-700 rounded-sm"

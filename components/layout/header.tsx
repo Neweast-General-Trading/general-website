@@ -12,14 +12,15 @@ export default function Header() {
       <div className="bg-gray-950 text-white py-2">
         <div className="container mx-auto px-4 text-center text-sm font-semibold">
           🚀 Discover unbeatable deals at Neweast General Trading! Quality
-          products at the best prices.{" "}
+          products at the best prices. For existing user{" "}
           <Link
-            href="https://ksa.neweast.cloud/"
+            href="https://ecomuae.neweast.cloud/"
             className="underline hover:text-red-600"
             target="_blank"
           >
             Shop Now
           </Link>
+          .
         </div>
       </div>
 

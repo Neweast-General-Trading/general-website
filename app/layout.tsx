@@ -17,7 +17,7 @@ export const metadata = {
   description:
     "Find the perfect parts for your vehicle with our extensive catalog and expert support.",
   icons: {
-    icon: "/assets/images/ne.png",
+    icon: "https://nesteastgt.s3.eu-west-2.amazonaws.com/paperless/1b159ec4b93_ne.png",
   },
 };
 

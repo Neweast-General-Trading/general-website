@@ -21,7 +21,8 @@ export const metadata = {
     title: "NewEast | About Us",
     type: "website",
     url: process.env.NEXT_PUBLIC_URL + "/about",
-    image: "/assets/images/ne.png",
+    image:
+      "https://nesteastgt.s3.eu-west-2.amazonaws.com/paperless/1b159ec4b93_ne.png",
     description:
       "Discover NewEast's commitment to excellence in the automotive aftermarket industry. Learn about our mission, vision, history, and leadership team.",
   },
@@ -29,7 +30,8 @@ export const metadata = {
     title: "NewEast | About Us",
     type: "website",
     url: process.env.NEXT_PUBLIC_URL + "/about",
-    image: "/assets/images/ne.png",
+    image:
+      "https://nesteastgt.s3.eu-west-2.amazonaws.com/paperless/1b159ec4b93_ne.png",
     description:
       "Discover NewEast's commitment to excellence in the automotive aftermarket industry. Learn about our mission, vision, history, and leadership team.",
   },
@@ -53,7 +55,7 @@ export default function AboutPage() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <Image
-                  src="/assets/Images/about_us/ahmad-ceo.png"
+                  src="https://nesteastgt.s3.eu-west-2.amazonaws.com/paperless/34ac150efc4_ahmad-ceo.png"
                   alt="About Our Company"
                   width={500}
                   height={500}
@@ -91,7 +93,7 @@ export default function AboutPage() {
                 </p>
                 <div className="grid grid-cols-1 gap-4 pt-4">
                   <Image
-                    src="/assets/Images/about_us/signature.png"
+                    src="https://nesteastgt.s3.eu-west-2.amazonaws.com/paperless/128934ac150_signature.png"
                     alt="About Our Company"
                     width={600}
                     height={500}
@@ -137,7 +139,7 @@ export default function AboutPage() {
               </div>
               <div>
                 <Image
-                  src="/assets/Images/about_us/building.png"
+                  src="https://nesteastgt.s3.eu-west-2.amazonaws.com/paperless/8934ac150ef_building.png"
                   alt="About Our Company"
                   width={600}
                   height={500}
@@ -153,7 +155,7 @@ export default function AboutPage() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <Image
-                  src="/assets/Images/about_us/building2.jpg"
+                  src="https://nesteastgt.s3.eu-west-2.amazonaws.com/paperless/28934ac150e_building2.jpg"
                   alt="About Our Company"
                   width={600}
                   height={500}
@@ -196,7 +198,7 @@ export default function AboutPage() {
               </div>
               <div>
                 <Image
-                  src="/assets/Images/about_us/Picture6.png"
+                  src="https://nesteastgt.s3.eu-west-2.amazonaws.com/paperless/934ac150efc_Picture6.png"
                   alt="About Our Company"
                   width={600}
                   height={500}
@@ -287,31 +289,36 @@ export default function AboutPage() {
                 {
                   name: "AHMAD JUMA AHLI",
                   position: "CHIEF EXECUTIVE OFFICER",
-                  image: "/assets/images/about_us/team/1.png",
+                  image:
+                    "https://nesteastgt.s3.eu-west-2.amazonaws.com/paperless/3b128934ac1_1.png",
                   link: "https://www.linkedin.com/in/ahmed-juma-al-ahli/",
                 },
                 {
                   name: "Sarah Johnson",
                   position: "Chief Operations Officer",
-                  image: "/assets/images/about_us/team/2.jpg",
+                  image:
+                    "https://nesteastgt.s3.eu-west-2.amazonaws.com/paperless/c3b128934ac_2.jpg",
                   link: "/about",
                 },
                 {
                   name: "Michael Brown",
                   position: "Head of Product",
-                  image: "/assets/images/about_us/team/3.jpg",
+                  image:
+                    "https://nesteastgt.s3.eu-west-2.amazonaws.com/paperless/25c3b128934_3.jpg",
                   link: "/about",
                 },
                 {
                   name: "Emily Davis",
                   position: "Customer Service Director",
-                  image: "/assets/images/about_us/team/4.jpg",
+                  image:
+                    "https://nesteastgt.s3.eu-west-2.amazonaws.com/paperless/b128934ac15_4.jpg",
                   link: "https://www.linkedin.com/in/henryshaaya/?originalSubdomain=ae",
                 },
                 {
                   name: "Emily Davis",
                   position: "Customer Service Director",
-                  image: "/assets/images/about_us/team/5.jpg",
+                  image:
+                    "https://nesteastgt.s3.eu-west-2.amazonaws.com/paperless/5c3b128934a_5.jpg",
                   link: "https://www.linkedin.com/in/nantha-kumar-2a310847/?originalSubdomain=ae",
                 },
               ].map((member, index) => (
@@ -346,7 +353,9 @@ export default function AboutPage() {
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-white p-6 rounded-sm">
                 <Image
-                  src={"/assets/images/about_us/iso/1.jpg"}
+                  src={
+                    "https://nesteastgt.s3.eu-west-2.amazonaws.com/paperless/2725c3b1289_1.jpg"
+                  }
                   width={250}
                   height={500}
                   className="mx-auto"
@@ -356,7 +365,9 @@ export default function AboutPage() {
 
               <div className="bg-white p-6 rounded-sm">
                 <Image
-                  src={"/assets/images/about_us/iso/2.jpg"}
+                  src={
+                    "https://nesteastgt.s3.eu-west-2.amazonaws.com/paperless/12725c3b128_2.jpg"
+                  }
                   width={250}
                   height={500}
                   className="mx-auto"
@@ -366,7 +377,9 @@ export default function AboutPage() {
 
               <div className="bg-white p-6 rounded-sm">
                 <Image
-                  src={"/assets/images/about_us/iso/3.jpg"}
+                  src={
+                    "https://nesteastgt.s3.eu-west-2.amazonaws.com/paperless/725c3b12893_3.jpg"
+                  }
                   width={250}
                   height={500}
                   className="mx-auto"
