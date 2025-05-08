@@ -1,17 +1,11 @@
-"use client";
-
-import { useState } from "react";
-import Link from "next/link";
-import { Search, ShoppingCart, User, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Logo from "@/public/assets/Images/logo.png";
 export default function Header() {
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-
   return (
     <header className="sticky top-0 z-50 w-full">
       {/* Top Bar */}

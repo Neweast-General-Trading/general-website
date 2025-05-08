@@ -16,6 +16,9 @@ export const metadata = {
   title: "NewEast - Quality Auto Parts & Accessories",
   description:
     "Find the perfect parts for your vehicle with our extensive catalog and expert support.",
+  icons: {
+    icon: "/assets/images/ne.png",
+  },
 };
 
 export default function RootLayout({

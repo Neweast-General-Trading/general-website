@@ -1,73 +1,43 @@
-"use client";
-
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import ContactForm from "@/components/contact-form";
 
-// Form validation schema
-const formSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters" }),
-  email: z.string().email({ message: "Please enter a valid email address" }),
-  subject: z.string().min(3, { message: "Subject is required" }),
-  message: z
-    .string()
-    .min(10, { message: "Message must be at least 10 characters" }),
-});
-
-type FormData = z.infer<typeof formSchema>;
-
-export default function ContactForm() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm<FormData>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    },
-  });
-
-  const onSubmit = async (data: FormData) => {
-    setIsSubmitting(true);
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (!response.ok) {
-        throw new Error("Failed to submit form");
-      }
-
-      reset();
-      setIsSubmitted(true);
-
-      // Reset success message after 5 seconds
-      setTimeout(() => {
-        setIsSubmitted(false);
-      }, 5000);
-    } catch (error) {
-      console.error("Error submitting form:", error);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+export const metadata = {
+  title: "NewEast | Contact Us",
+  description:
+    "Get in touch with NewEast for inquiries about top-quality auto parts including engine & fuel parts, batteries, brakes, steering, and lubricants. We're here to help.",
+  keywords: [
+    "contact NewEast",
+    "auto parts inquiries",
+    "car spare parts support",
+    "engine parts contact",
+    "fuel system help",
+    "brake pads support",
+    "car battery inquiries",
+    "lubricants contact",
+    "bearings support",
+    "suspension help",
+    "steering inquiries",
+    "automotive support",
+    "UAE auto parts contact",
+  ],
+  openGraph: {
+    title: "NewEast | Contact Us",
+    type: "website",
+    url: process.env.NEXT_PUBLIC_URL + "/contact",
+    image: "/assets/images/ne.png",
+    description:
+      "Get in touch with NewEast for inquiries about top-quality auto parts including engine & fuel parts, batteries, brakes, steering, and lubricants. We're here to help.",
+  },
+  twitter: {
+    title: "NewEast | Contact Us",
+    type: "website",
+    url: process.env.NEXT_PUBLIC_URL + "/contact",
+    image: "/assets/images/ne.png",
+    description:
+      "Get in touch with NewEast for inquiries about top-quality auto parts including engine & fuel parts, batteries, brakes, steering, and lubricants. We're here to help.",
+  },
+};
+export default function ContactPage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -83,105 +53,7 @@ export default function ContactForm() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div>
-              <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
-              {isSubmitted ? (
-                <div className="bg-green-50 border border-green-200 text-green-700 p-4 rounded-sm mb-6">
-                  Thank you for your message! We'll get back to you shortly.
-                </div>
-              ) : null}
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Your Name
-                  </label>
-                  <Input
-                    id="name"
-                    {...register("name")}
-                    className={`w-full rounded-sm ${
-                      errors.name ? "border-red-500" : ""
-                    }`}
-                  />
-                  {errors.name && (
-                    <p className="text-red-500 text-xs mt-1">
-                      {errors.name.message}
-                    </p>
-                  )}
-                </div>
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Email Address
-                  </label>
-                  <Input
-                    id="email"
-                    type="email"
-                    {...register("email")}
-                    className={`w-full rounded-sm ${
-                      errors.email ? "border-red-500" : ""
-                    }`}
-                  />
-                  {errors.email && (
-                    <p className="text-red-500 text-xs mt-1">
-                      {errors.email.message}
-                    </p>
-                  )}
-                </div>
-                <div>
-                  <label
-                    htmlFor="subject"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Subject
-                  </label>
-                  <Input
-                    id="subject"
-                    {...register("subject")}
-                    className={`w-full rounded-sm ${
-                      errors.subject ? "border-red-500" : ""
-                    }`}
-                  />
-                  {errors.subject && (
-                    <p className="text-red-500 text-xs mt-1">
-                      {errors.subject.message}
-                    </p>
-                  )}
-                </div>
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    {...register("message")}
-                    rows={5}
-                    className={`w-full min-h-[120px] rounded-sm border ${
-                      errors.message ? "border-red-500" : "border-input"
-                    } bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2`}
-                  ></textarea>
-                  {errors.message && (
-                    <p className="text-red-500 text-xs mt-1">
-                      {errors.message.message}
-                    </p>
-                  )}
-                </div>
-                <Button
-                  type="submit"
-                  className="w-full bg-red-600 hover:bg-red-700 rounded-sm"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? "Sending..." : "Send Message"}
-                </Button>
-              </form>
-            </div>
+            <ContactForm />
 
             {/* Contact Information */}
             <div>
@@ -193,7 +65,9 @@ export default function ContactForm() {
                   </div>
                   <div>
                     <h3 className="font-medium text-lg">Our Location</h3>
-                    <p className="text-gray-600">S21006 JAFZA SOUTH - Dubai</p>
+                    <p className="text-gray-600">
+                      New East General Trading. Plot No S21006, Dubai,UAE
+                    </p>
                   </div>
                 </div>
 
@@ -203,7 +77,7 @@ export default function ContactForm() {
                   </div>
                   <div>
                     <h3 className="font-medium text-lg">Phone Number</h3>
-                    <p className="text-gray-600">048811195</p>
+                    <p className="text-gray-600"> +971 4 228 1466</p>
                   </div>
                 </div>
 
@@ -213,8 +87,7 @@ export default function ContactForm() {
                   </div>
                   <div>
                     <h3 className="font-medium text-lg">Email Address</h3>
-                    <p className="text-gray-600">info@NewEast.com</p>
-                    <p className="text-gray-600">support@NewEast.com</p>
+                    <p className="text-gray-600"> Info@neweast.co</p>
                   </div>
                 </div>
 
@@ -225,10 +98,8 @@ export default function ContactForm() {
                   <div>
                     <h3 className="font-medium text-lg">Working Hours</h3>
                     <p className="text-gray-600">
-                      Monday - Friday: 8:00 AM - 6:00 PM
+                      Monday – Friday 8:00 to 19:00
                     </p>
-                    <p className="text-gray-600">Saturday: 9:00 AM - 4:00 PM</p>
-                    <p className="text-gray-600">Sunday: Closed</p>
                   </div>
                 </div>
               </div>

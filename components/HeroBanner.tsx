@@ -72,11 +72,10 @@ const HeroBanner = () => {
     }, 5000);
     return () => clearInterval(interval);
   }, []);
-  const [direction, setDirection] = useState(0);
 
   return (
     <div className="relative h-[400px] md:h-[500px] overflow-hidden bg-neweast-gray">
-      <AnimatePresence initial={false} custom={direction}>
+      <AnimatePresence initial={false}>
         {slides.map((slide, index) => (
           <div
             key={index}

@@ -1,7 +1,3 @@
-import Image from "next/image";
-import { CheckCircle, Crosshair, Gem, Target, View } from "lucide-react";
-import Link from "next/link";
-
 export default function AboutPage() {
   return (
     <div className="flex flex-col min-h-screen">

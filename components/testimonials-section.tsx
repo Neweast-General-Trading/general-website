@@ -83,7 +83,7 @@ export default function TestimonialsSection() {
                   ))}
                 </div>
                 <p className="italic text-white">
-                  "{testimonials[currentIndex].testimonial}"
+                  {`&quot;` + testimonials[currentIndex].testimonial + `&quot;`}
                 </p>
               </div>
             </div>

@@ -1,24 +1,6 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
-import sql from "mssql";
 import { generateEmailTemplate } from "@/lib/email-template";
-
-// SQL Server configuration
-const sqlConfig = {
-  user: process.env.MSSQL_USER,
-  password: process.env.MSSQL_PASSWORD,
-  database: process.env.MSSQL_DATABASE,
-  server: process.env.MSSQL_SERVER || "localhost",
-  pool: {
-    max: 10,
-    min: 0,
-    idleTimeoutMillis: 30000,
-  },
-  options: {
-    encrypt: true, // for azure
-    trustServerCertificate: process.env.NODE_ENV !== "production",
-  },
-};
 
 // Email configuration
 const transporter = nodemailer.createTransport({
@@ -43,9 +25,6 @@ export async function POST(request: Request) {
       );
     }
 
-    // Store in database
-    // await storeInDatabase({ name, email, subject, message });
-
     // Send email notification
     await sendEmailNotification({ name, email, subject, message });
 
@@ -62,48 +41,6 @@ export async function POST(request: Request) {
   }
 }
 
-async function storeInDatabase({
-  name,
-  email,
-  subject,
-  message,
-}: {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-}) {
-  try {
-    // Connect to SQL Server
-    await sql.connect(sqlConfig);
-
-    // Create table if it doesn't exist
-    await sql.query(`
-      IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='contact_submissions' AND xtype='U')
-      CREATE TABLE contact_submissions (
-        id INT IDENTITY(1,1) PRIMARY KEY,
-        name NVARCHAR(255) NOT NULL,
-        email NVARCHAR(255) NOT NULL,
-        subject NVARCHAR(255) NOT NULL,
-        message NVARCHAR(MAX) NOT NULL,
-        created_at DATETIME DEFAULT GETDATE()
-      )
-    `);
-
-    // Insert the contact form data using parameterized query
-    await sql.query`
-      INSERT INTO contact_submissions (name, email, subject, message)
-      VALUES (${name}, ${email}, ${subject}, ${message})
-    `;
-  } catch (error) {
-    console.error("Database error:", error);
-    throw new Error("Failed to store contact form in database");
-  } finally {
-    // Close the connection
-    await sql.close();
-  }
-}
-
 async function sendEmailNotification({
   name,
   email,
@@ -115,7 +52,7 @@ async function sendEmailNotification({
   subject: string;
   message: string;
 }) {
-  const salesEmail = process.env.SALES_EMAIL || "sales@neweast.com";
+  const salesEmail = process.env.MARKETING_EMAIL || "sales@neweast.com";
 
   const mailOptions = {
     from: process.env.EMAIL_FROM || "noreply@neweast.com",
