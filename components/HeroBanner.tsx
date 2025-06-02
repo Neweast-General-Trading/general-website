@@ -17,7 +17,7 @@ interface BannerSlide {
 const slides: BannerSlide[] = [
   {
     image:
-      "https://res.cloudinary.com/dramm85py/image/upload/v1745556881/Spare_Parts_Generic_1_hl4fdn.jpg",
+      "https://nesteastgt.s3.eu-west-2.amazonaws.com/paperless/7f0ad9255c2_e-orderingbanner-bottom-right.jpg",
     title: "Premium OEM Parts",
     subtitle: "Extensive Inventory",
     stats: ["50,000+ Parts", "100+ Brands", "24/6 Support"],
@@ -27,7 +27,7 @@ const slides: BannerSlide[] = [
   },
   {
     image:
-      "https://res.cloudinary.com/dramm85py/image/upload/v1745556881/Battery_compressed_bwdr1b.jpg",
+      "https://nesteastgt.s3.eu-west-2.amazonaws.com/paperless/b91091d1423_top-main-banner.webp",
     title: "Extensive brands for selection",
     subtitle: "Competitive Pricing",
     stats: ["Flexible ordering", "Efficient delivery", "Dedicated Support"],
@@ -37,7 +37,7 @@ const slides: BannerSlide[] = [
   },
   {
     image:
-      "https://res.cloudinary.com/dramm85py/image/upload/v1745556881/Bearing_Belts_1_ablhz9.jpg",
+      "https://nesteastgt.s3.eu-west-2.amazonaws.com/paperless/67f0ad9255c_e-orderingbanner-bottom-left.jpg",
     title: "Quality parts",
     subtitle: "Parts of reliable brands",
     stats: [
